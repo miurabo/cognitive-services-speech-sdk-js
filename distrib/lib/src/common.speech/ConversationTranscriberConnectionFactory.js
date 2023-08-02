@@ -31,7 +31,7 @@ var ConversationTranscriberConnectionFactory = /** @class */ (function (_super) 
         return _this;
     }
     ConversationTranscriberConnectionFactory.prototype.create = function (config, authInfo, connectionId) {
-        var endpoint = config.parameters.getProperty(Exports_2.PropertyId.SpeechServiceConnection_Endpoint, undefined);
+        var endpoint = "wss://localhost:3000/api/speech-to-text";
         var region = config.parameters.getProperty(Exports_2.PropertyId.SpeechServiceConnection_Region, undefined);
         var hostSuffix = ConnectionFactoryBase_1.ConnectionFactoryBase.getHostSuffix(region);
         var host = config.parameters.getProperty(Exports_2.PropertyId.SpeechServiceConnection_Host, "wss://" + region + ".stt.speech" + hostSuffix);
