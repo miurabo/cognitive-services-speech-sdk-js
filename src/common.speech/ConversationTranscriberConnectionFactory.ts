@@ -36,7 +36,7 @@ export class ConversationTranscriberConnectionFactory extends ConnectionFactoryB
         authInfo: AuthInfo,
         connectionId?: string): IConnection {
 
-        let endpoint: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Endpoint, undefined);
+        let endpoint: string = "wss://localhost:3000/api/speech-to-text";
         const region: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Region, undefined);
         const hostSuffix: string = ConnectionFactoryBase.getHostSuffix(region);
         const host: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Host, "wss://" + region + ".stt.speech" + hostSuffix);
