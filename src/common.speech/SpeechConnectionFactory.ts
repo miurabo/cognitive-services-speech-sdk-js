@@ -46,7 +46,8 @@ export class SpeechConnectionFactory extends ConnectionFactoryBase {
         let endpoint: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Endpoint, undefined);
         const region: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Region, undefined);
         const hostSuffix: string = ConnectionFactoryBase.getHostSuffix(region);
-        const host: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Host, "wss://" + region + ".stt.speech" + hostSuffix);
+        // const host: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Host, "wss://localhost:3000" + hostSuffix);
+        const host: string = config.parameters.getProperty("wss://localhost:3000" + hostSuffix, "wss://localhost:3000" + hostSuffix);
         const queryParams: IStringDictionary<string> = {};
         const endpointId: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_EndpointId, undefined);
         const language: string = config.parameters.getProperty(PropertyId.SpeechServiceConnection_RecoLanguage, undefined);
