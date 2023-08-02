@@ -32051,7 +32051,7 @@ var WebsocketConnection = /** @class */ (function () {
                 }
             }
         }
-        this.privUri = "wss://localhost:3000/api/speech-to-text" + queryParams;
+        this.privUri = "wss://" + location.host + "/api/speech-to-text" + queryParams;
         this.privId = connectionId ? connectionId : Exports_1.createNoDashGuid();
         this.privConnectionMessageAdapter = new WebsocketMessageAdapter_1.WebsocketMessageAdapter(this.privUri, this.id, this.privMessageFormatter, proxyInfo, headers, enableCompression);
     }

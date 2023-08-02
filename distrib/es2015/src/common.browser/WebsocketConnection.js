@@ -48,7 +48,7 @@ export class WebsocketConnection {
                 }
             }
         }
-        this.privUri = "wss://localhost:3000/api/speech-to-text" + queryParams;
+        this.privUri = "wss://" + location.host + "/api/speech-to-text" + queryParams;
         this.privId = connectionId ? connectionId : createNoDashGuid();
         this.privConnectionMessageAdapter = new WebsocketMessageAdapter(this.privUri, this.id, this.privMessageFormatter, proxyInfo, headers, enableCompression);
     }
