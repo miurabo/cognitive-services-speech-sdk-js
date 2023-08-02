@@ -13,7 +13,7 @@ export class ConversationTranscriberConnectionFactory extends ConnectionFactoryB
         this.universalUri = "/speech/universal/v2";
     }
     create(config, authInfo, connectionId) {
-        let endpoint = "wss://localhost:3000/api/speech-to-text";
+        let endpoint = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Endpoint, undefined);
         const region = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Region, undefined);
         const hostSuffix = ConnectionFactoryBase.getHostSuffix(region);
         const host = config.parameters.getProperty(PropertyId.SpeechServiceConnection_Host, "wss://" + region + ".stt.speech" + hostSuffix);
